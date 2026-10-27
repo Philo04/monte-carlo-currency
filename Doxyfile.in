@@ -5,3 +5,22 @@ RECURSIVE              = YES
 GENERATE_LATEX         = NO
 GENERATE_HTML          = YES
 HTML_OUTPUT            = html
+
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+EXTRACT_PACKAGE        = YES
+EXTRACT_PRIVATE        = NO
+HIDE_UNDOC_MEMBERS     = NO
+HIDE_UNDOC_CLASSES     = NO
+
+INPUT_ENCODING         = UTF-8
+OUTPUT_LANGUAGE        = Russian
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+GENERATE_TREEVIEW      = YES
+FULL_PATH_NAMES        = NO
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+SEARCHENGINE           = YES
