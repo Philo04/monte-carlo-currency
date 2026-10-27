@@ -1,5 +1,6 @@
-#define CATCH_CONFIG_MAIN
-#include <catch2/catch.hpp>
+#include <catch2/catch_test_macros.hpp>
+#include <catch2/catch_approx.hpp>
+#include <cmath>
 #include "monte_carlo.h"
 
 TEST_CASE("Monte Carlo Simulation basic test", "[simulate]") {
@@ -10,7 +11,7 @@ TEST_CASE("Monte Carlo Simulation basic test", "[simulate]") {
     int steps = 252;
     int simulations = 1000;
 
-    auto results = MonteCarloSimulator::simulate(s0, mu, sigma, time, steps, simulations);
+    auto results = simulate(s0, mu, sigma, time, steps, simulations);
 
     REQUIRE(results.size() == simulations);
     
@@ -28,10 +29,11 @@ TEST_CASE("Zero volatility deterministic test", "[simulate]") {
     int steps = 10;
     int simulations = 10;
 
-    auto results = MonteCarloSimulator::simulate(s0, mu, sigma, time, steps, simulations);
+    auto results = simulate(s0, mu, sigma, time, steps, simulations);
     double expected = s0 * std::exp(mu * time);
 
     for (double price : results) {
-        REQUIRE(price == Approx(expected).epsilon(0.001));
+        // В Catch2 v3 используется Catch::Approx
+        REQUIRE(price == Catch::Approx(expected).epsilon(0.001));
     }
 }
