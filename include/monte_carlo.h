@@ -1,3 +1,16 @@
+/**
+ * @mainpage Моделирование курса валют методом Монте-Карло
+ *
+ * @section intro Введение
+ * Реализована симуляция геометрического броуновского движения (GBM) для оценки цен валют.
+ *
+ * @section usage Пример использования
+ * @code
+ * #include "monte_carlo.h"
+ * 
+ * auto prices = simulate(100., 0.05, 0.2, 1.0, 252, 10000);
+ * @endcode
+ */
 #ifndef MONTE_CARLO_H
 #define MONTE_CARLO_H
 
